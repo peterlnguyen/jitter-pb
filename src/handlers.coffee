@@ -8,6 +8,7 @@ module.exports = (arg) ->
 
   #jitter = require("./handlers/jitter")(application)
   widget = require("./handlers/widget")(application)
+  servers = require("./handlers/servers")(application)
 
   handle = (callback) ->
     (context) ->
@@ -41,5 +42,5 @@ module.exports = (arg) ->
   widget:
     get: widget.get
 
-#  jitter:
-#    create: jitter.create
+  servers:
+    create: servers.create

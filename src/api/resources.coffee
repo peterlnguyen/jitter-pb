@@ -10,10 +10,13 @@ module.exports =
         response:
           type: media_type "widget"
           status: 200
-#      create:
-#        method: "POST"
-#        requests:
-#          type: media_type "widget"
-#        response:
-#          type: media_type "widget"
-#          status: 201
+
+  servers:
+    actions:
+      create:
+        method: "POST"
+        request:
+          type: media_type "server"
+        response:
+          type: media_type "server_status"
+          status: 201
