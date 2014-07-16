@@ -1,11 +1,12 @@
 request = require("request")
 
-module.exports = ((_arg) ->
+module.exports = (arg) ->
   
   # environment config 
-  config = _arg.configuration
+  config = arg.configuration
 
-  jitter = require("./handlers/jitter")(config)
+  #jitter = require("./handlers/jitter")(config)
+  widget = require("./handlers/widget")(config)
 
   handle = (callback) ->
     (context) ->
@@ -26,18 +27,18 @@ module.exports = ((_arg) ->
         content: content
       respond context, callback(details)
 
-  respond = ((context, events) ->
+  respond = (context, events) ->
     match = context.match
     status = (match.success_status or 200)
     events.once "success", (result) ->
       context.respond status, result
     events.once "error", (result) ->
       context.error error.message, error.reason
-  )
   
   # all of the resources we want exposed, via src/handlers/ files 
+  
+  widget:
+    get: widget.get
 
-  jitter:
-    create: jitter.create
-
-)
+#  jitter:
+#    create: jitter.create
