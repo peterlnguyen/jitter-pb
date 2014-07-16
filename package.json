@@ -15,6 +15,9 @@
     "minimist": "~0.2.0",
     "c50n": "~0.6.0",
     "patchboard": "*",
-    "request": "~2.37.0"
+    "request": "~2.37.0",
+    "should": "~4.0.4",
+    "require": "~0.5.0",
+    "mocha": "~1.20.1"
   }
 }
