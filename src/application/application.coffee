@@ -1,5 +1,7 @@
 sys = require "sys"
 exec = require("child_process").exec
+digitalocean = require "./digitalocean"
+
 
 print_cmd = (error, stdout, stderr) ->
   sys.puts error
@@ -7,6 +9,9 @@ print_cmd = (error, stdout, stderr) ->
   sys.puts stderr
 
 module.exports =
+
+  create_server: ({client_id, api_key, host}) ->
+    digitalocean.create_server client_id, api_key, host
 
   build: ->
     exec "cd ~ && cd documents/jitter-test/ && sudo docker build -t jitter .", print_cmd

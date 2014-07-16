@@ -10,6 +10,7 @@ describe "initial POST test", (done) ->
     data =
       build: "bamboo"
       api_key: "gibberish"
+      client_id: "12345"
       host: "digitalocean"
 
     options =
@@ -23,6 +24,7 @@ describe "initial POST test", (done) ->
     callback = (error, response, body) ->
       should.not.exist error
       response.should.be.ok
-      body.should.be.ok
+      body.should.equal "All good, baby"
+      done()
      
     request options, callback

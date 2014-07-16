@@ -28,8 +28,11 @@ module.exports =
         api_key:
           required: true
           type: "string"
+        client_id:
+          required: true
+          type: "string"
         host:
           required: true
           type: "string"
-          enum: ["amazon, linode, digitalocean"]
+          enum: ["amazon", "linode", "digitalocean"]
 

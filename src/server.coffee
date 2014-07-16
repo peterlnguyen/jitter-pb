@@ -9,3 +9,4 @@ module.exports = (config) ->
     port: port
     url: url
     handlers: handlers(config)
+    validate: true
