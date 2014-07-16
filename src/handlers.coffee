@@ -1,12 +1,13 @@
-request = require("request")
+request = require "request"
+application = require "./application/application.coffee"
 
 module.exports = (arg) ->
   
   # environment config 
   config = arg.configuration
 
-  #jitter = require("./handlers/jitter")(config)
-  widget = require("./handlers/widget")(config)
+  #jitter = require("./handlers/jitter")(application)
+  widget = require("./handlers/widget")(application)
 
   handle = (callback) ->
     (context) ->
@@ -36,7 +37,7 @@ module.exports = (arg) ->
       context.error error.message, error.reason
   
   # all of the resources we want exposed, via src/handlers/ files 
-  
+
   widget:
     get: widget.get
 

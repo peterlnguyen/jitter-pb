@@ -13,6 +13,8 @@
   "license": "BSD-2-Clause",
   "dependencies": {
     "minimist": "~0.2.0",
-    "c50n": "~0.6.0"
+    "c50n": "~0.6.0",
+    "patchboard": "*",
+    "request": "~2.37.0"
   }
 }

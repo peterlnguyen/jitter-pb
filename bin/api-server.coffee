@@ -9,10 +9,8 @@ fs = require "fs"
 
 if env != undefined and env != null
   #TODO: check that file exists
-  #TODO: get c50n working
-  tmp = fs.readFileSync("./env/" + env + ".cson")
-  console.log tmp
-  #config = CSON.parse 
+  config_string = fs.readFileSync("./env/" + env + ".cson", "utf-8")
+  config = CSON.parse config_string
   if config != undefined and config != null
     Server = require("../src/server")(config)
     Server.run()
