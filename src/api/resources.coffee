@@ -3,12 +3,12 @@ media_type = (name) ->
 
 module.exports =
 
-  widget:
+  resource:
     actions:
       get:
         method: "GET"
         response:
-          type: media_type "widget"
+          type: "application/json"
           status: 200
 
   servers:

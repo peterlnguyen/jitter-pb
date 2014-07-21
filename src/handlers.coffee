@@ -39,8 +39,8 @@ module.exports = (arg) ->
   
   # all of the resources we want exposed, via src/handlers/ files 
 
-  widget:
-    get: widget.get
+  resource:
+    get: resource.get
 
   servers:
     create: servers.create
