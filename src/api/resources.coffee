@@ -10,13 +10,3 @@ module.exports =
         response:
           type: "application/json"
           status: 200
-
-  servers:
-    actions:
-      create:
-        method: "POST"
-        request:
-          type: media_type "server"
-        response:
-          type: media_type "server_status"
-          status: 201

@@ -13,6 +13,7 @@ if env != undefined and env != null
   config = CSON.parse config_string
   if config != undefined and config != null
     Server = require("../src/server")(config)
+    console.log Server
     Server.run()
   else
     console.log "Specified config doesn't exist"

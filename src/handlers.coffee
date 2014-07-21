@@ -1,5 +1,4 @@
 request = require "request"
-application = require "./application/application.coffee"
 
 module.exports = (arg) ->
   
@@ -7,8 +6,7 @@ module.exports = (arg) ->
   config = arg.configuration
 
   #jitter = require("./handlers/jitter")(application)
-  widget = require("./handlers/widget")(application)
-  servers = require("./handlers/servers")(application)
+  resource = require("./handlers/resource")()
 
   handle = (callback) ->
     (context) ->
@@ -41,6 +39,3 @@ module.exports = (arg) ->
 
   resource:
     get: resource.get
-
-  servers:
-    create: servers.create

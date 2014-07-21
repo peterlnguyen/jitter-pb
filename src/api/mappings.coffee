@@ -2,4 +2,4 @@ module.exports =
 
   resource:
     resource: "resource"
-    template: "/resource/:type"
+    template: "/resource/:type/:action"
